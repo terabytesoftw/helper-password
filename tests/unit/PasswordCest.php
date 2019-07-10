@@ -29,17 +29,19 @@ class PasswordCest
      */
     public function testPasswordHashDefaultOptions(UnitTester $I): void
     {
-        $passwordrandom = $this->password->generate(8);
+        if ((version_compare(phpversion(), '7.3.0')) >= 0) {
+            $passwordrandom = $this->password->generate(8);
 
-        $hash = $this->password->hash(
-            $passwordrandom,
-            \Yii::$app->params['helper.password.algo'],
-            \Yii::$app->params['helper.password.options']
-        );
+            $hash = $this->password->hash(
+                $passwordrandom,
+                \Yii::$app->params['helper.password.algo'],
+                \Yii::$app->params['helper.password.options']
+            );
 
-        $I->assertStringContainsString('$argon2id', $hash);
+            $I->assertStringContainsString('$argon2id', $hash);
 
-        $I->assertTrue($this->password->validate($passwordrandom, $hash));
+            $I->assertTrue($this->password->validate($passwordrandom, $hash));
+        }
     }
 
     /**
@@ -47,23 +49,25 @@ class PasswordCest
      */
     public function testPasswordHashArgon2i(UnitTester $I): void
     {
-        $options = [
-            'memory_cost' => 1<<17,
-            'time_cost'   => 3,
-            'threads'     => 4,
-        ];
+        if ((version_compare(phpversion(), '7.2.0')) >= 0) {
+            $options = [
+                'memory_cost' => 1<<17,
+                'time_cost'   => 3,
+                'threads'     => 4,
+            ];
 
-        $passwordrandom = $this->password->generate(8);
+            $passwordrandom = $this->password->generate(8);
 
-        $hash = $this->password->hash(
-            $passwordrandom,
-            2,
-            \Yii::$app->params['helper.password.options']
-        );
+            $hash = $this->password->hash(
+                $passwordrandom,
+                2,
+                \Yii::$app->params['helper.password.options']
+            );
 
-        $I->assertStringContainsString('$argon2i', $hash);
+            $I->assertStringContainsString('$argon2i', $hash);
 
-        $I->assertTrue($this->password->validate($passwordrandom, $hash));
+            $I->assertTrue($this->password->validate($passwordrandom, $hash));
+        }
     }
 
     /**

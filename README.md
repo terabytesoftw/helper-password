@@ -140,4 +140,4 @@ $ vendor/bin/codecept run unit --coverage-xml
 [![License](https://poser.pugx.org/terabytesoftw/helper-password/license.svg)](LICENSE.md)
 [![YiiFramework](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
 [![Total Downloads](https://poser.pugx.org/terabytesoftw/helper-password/downloads.svg)](https://packagist.org/packages/terabytesoftw/helper-password)
-[![Total Downloads](https://github.styleci.io/repos/165419144/shield?branch=master)](https://github.styleci.io/repos/165419144)
+[![StyleCI](https://github.styleci.io/repos/195531459/shield?branch=master)](https://github.styleci.io/repos/195531459)
