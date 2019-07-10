@@ -11,7 +11,7 @@ use yii\base\Security;
 class Password
 {
     /**
-     * @var $security
+     * @var Security $security
      **/
     protected $security;
 
