@@ -1,5 +1,5 @@
 <?php
-namespace terabytesoft\helpers\password\tests;
+namespace terabytesoft\helpers\tests;
 
 /**
  * Inherited Methods

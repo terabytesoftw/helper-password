@@ -68,7 +68,7 @@ or add composer.json:
 ~~~
 <?php
 
-use terabytesoft\helpers\password\Password;
+use terabytesoft\helpers\Password;
 
 // config params defaults config/helperpassword.php
 

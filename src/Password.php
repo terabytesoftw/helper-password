@@ -1,12 +1,13 @@
 <?php
 
-namespace terabytesoft\helpers\password;
+namespace terabytesoft\helpers;
 
 use yii\base\Security;
 
 /**
- * Password
+ * Class Password
  *
+ * Helper security methods
  **/
 class Password
 {

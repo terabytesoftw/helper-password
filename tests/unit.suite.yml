@@ -6,6 +6,6 @@ actor: UnitTester
 modules:
     enabled:
         - Asserts
-        - \terabytesoft\helpers\password\tests\Helper\Unit
+        - \terabytesoft\helpers\tests\Helper\Unit
         - Yii2
     step_decorators: ~

@@ -1,10 +1,15 @@
 <?php
 
-namespace terabytesoft\helpers\password\tests;
+namespace terabytesoft\helpers\tests;
 
-use terabytesoft\helpers\password\Password;
-use terabytesoft\helpers\password\tests\UnitTester;
+use terabytesoft\helpers\Password;
+use terabytesoft\helpers\tests\UnitTester;
 
+/**
+ * Class PasswordCest
+ *
+ * Tests codecept helpers password
+ */
 class PasswordCest
 {
     /**
@@ -15,13 +20,17 @@ class PasswordCest
     /**
      * _before
      */
-    public function _before(UnitTester $I)
+    public function _before(UnitTester $I): void
     {
         $this->password = new Password();
     }
 
-    public function _after(UnitTester $I)
+    /**
+     * _after
+     */
+    public function _after(UnitTester $I): void
     {
+        unset($this->password);
     }
 
     /**
